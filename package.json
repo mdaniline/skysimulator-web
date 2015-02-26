@@ -6,15 +6,21 @@
     "type": "git",
     "url": "https://github.com/mdaniline/skysimulator-web.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "mdaniline@gmail.com",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mdaniline/skysimulator-web/issues"
   },
   "homepage": "https://github.com/mdaniline/skysimulator-web",
   "devDependencies": {
+    "browserify": "^9.0.3",
+    "debowerify": "^1.2.0",
     "gulp": "^3.8.11",
     "gulp-sass": "^1.3.3",
-    "gulp-sourcemaps": "^1.5.0"
-  }
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-uglify": "^1.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "dependencies": {}
 }
