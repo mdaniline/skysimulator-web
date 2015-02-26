@@ -1,0 +1,20 @@
+{
+  "name": "skysimulator-web",
+  "version": "1.0.0",
+  "description": "Create skymaps using Rayleigh and Mie scattering!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdaniline/skysimulator-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdaniline/skysimulator-web/issues"
+  },
+  "homepage": "https://github.com/mdaniline/skysimulator-web",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-sass": "^1.3.3",
+    "gulp-sourcemaps": "^1.5.0"
+  }
+}

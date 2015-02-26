@@ -47,6 +47,10 @@ coverage.xml
 # Django stuff:
 *.log
 
+# Build-related stuff
+bower_components/
+node_modules/
+
 # Sphinx documentation
 docs/_build/
 
