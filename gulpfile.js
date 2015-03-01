@@ -7,17 +7,22 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserify = require('browserify');
 var debowerify = require('debowerify');
 
+
+var STATIC_ROOT = './skysimulator/static';
+var JS_ROOT = './frontend/js/src';
+var SASS_ROOT = './frontend/scss';
+
 gulp.task('styles', function() {
-    gulp.src('./skysimulator/static/scss/*.scss')
+    gulp.src(SASS_ROOT + '/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./skysimulator/static/css'));
+        .pipe(gulp.dest(STATIC_ROOT + '/css'));
 });
 
 gulp.task('scripts', function() {
     var bundler = browserify({
-       entries: ['./skysimulator/static/js-source/app.js'],
+       entries: [JS_ROOT + '/main.js'],
        debug: true
     });
     bundler.transform(debowerify);
@@ -29,15 +34,15 @@ gulp.task('scripts', function() {
             .pipe(sourcemaps.init({ loadMaps:true }))
             .pipe(uglify())
             .pipe(sourcemaps.write())
-            .pipe(gulp.dest('./skysimulator/static/js/'));
+            .pipe(gulp.dest(STATIC_ROOT + '/js'));
     };
 
     return bundle();
 });
 
 gulp.task('watch', function() {
-    gulp.watch('./skysimulator/static/scss/*.scss', ['styles']);
-    gulp.watch('./skysimulator/static/js-source/*.js', ['scripts']);
+    gulp.watch(SASS_ROOT + '/*.scss', ['styles']);
+    gulp.watch(JS_ROOT + '/**/*.js', ['scripts']);
 });
 
 gulp.task('default', ['watch']);
